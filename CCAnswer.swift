@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Answer: NSObject {
+public class CCAnswer: NSObject {
     var answerText: String!
     var upVotes: String!
     

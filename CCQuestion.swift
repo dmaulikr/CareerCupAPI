@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Question: NSObject {
+public class CCQuestion: NSObject {
     var questionText: String = ""
     var id: String?
     var company: String?
