@@ -18,8 +18,8 @@ public class CCQuestion: NSObject {
         super.init()
         self.questionText = text.capitilizedFirstLetter
         self.id = id
-        self.company = company
-        self.tags = tags
+        self.company = company?.capitilizedFirstLetter
+        self.tags = tags.map({$0.capitilizedFirstLetter})
     }
     
 }

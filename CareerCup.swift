@@ -10,7 +10,8 @@ import UIKit
 
 // Career Cup API Facade
 public class CareerCup: NSObject {
-    let DOMAIN = "http://www.careercup.com"
+    class var DOMAIN: String { return "http://www.careercup.com" }
+    
     private let answersSearch = CCAnswersSearch()
     private let questionsSearch = CCQuestionsSearch()
     

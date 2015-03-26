@@ -13,7 +13,7 @@ class CCAnswersSearch: NSObject {
     // Retrive answers from question ID
     func loadAnswersWithID(id: String) -> [CCAnswer] {
         var answers: [CCAnswer] = []
-        let answersURLString = "\(DOMAIN)/question?id=\(id)"
+        let answersURLString = "\(CareerCup.DOMAIN)/question?id=\(id)"
         let answersURL = NSURL(string: answersURLString)
         
         // Ensure html data was found
@@ -26,11 +26,6 @@ class CCAnswersSearch: NSObject {
                 let answerText = extractAnswerText(element)
                 let votes = extractUpVotes(element)
                 
-                // Print results
-                println(answerText)
-                println(votes)
-                println("--------------------------------------------")
-                
                 if answerText != nil && votes != nil {
                     var answer = CCAnswer(text: answerText!, upvotes: votes!)
                     answers += [answer]
@@ -38,7 +33,7 @@ class CCAnswersSearch: NSObject {
             }
             
         } else {
-           println("Page data can not be retrived")
+           println("Career Cup page data can not be retrived")
         }
         
         return answers;

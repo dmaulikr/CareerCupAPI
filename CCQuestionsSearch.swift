@@ -29,13 +29,6 @@ class CCQuestionsSearch: NSObject {
                 let company = extractCompany(element)
                 let tags = extractTags(element)
                
-                // Print results
-                println(questionText)
-                println(id)
-                println(company)
-                println(tags)
-                println("--------------------------------------------")
-                
                 // Create question as long as question text is found
                 if var safeText = questionText {
                     var question = CCQuestion(text: safeText, id: id, company: company, tags: tags)
@@ -43,7 +36,7 @@ class CCQuestionsSearch: NSObject {
                 }
             }
         } else {
-           println("Page data can not be retrived")
+           println("Career Cup page data can not be retrived")
         }
         
         return questions;
@@ -51,7 +44,7 @@ class CCQuestionsSearch: NSObject {
     
     // Build url for recent Career Cup interview questions based on supplied paramters
     private func buildQuestionsURLString(page: UInt, company: String?, job: String?, topic: String?) -> String {
-        var questionsURLString = "\(DOMAIN)/page?n=\(page)"
+        var questionsURLString = "\(CareerCup.DOMAIN)/page?n=\(page)"
         if company != nil {
           questionsURLString += "&pid=\(company)"
         }
