@@ -46,13 +46,13 @@ class CCQuestionsSearch: NSObject {
     private func buildQuestionsURLString(page: UInt, company: String?, job: String?, topic: String?) -> String {
         var questionsURLString = "\(CareerCup.DOMAIN)/page?n=\(page)"
         if company != nil {
-          questionsURLString += "&pid=\(company)"
+          questionsURLString += "&pid=\(company!)"
         }
         if job != nil {
-            questionsURLString += "&job=\(job)"
+            questionsURLString += "&job=\(job!)"
         }
         if topic != nil {
-            questionsURLString += "&topic=\(topic)"
+            questionsURLString += "&topic=\(topic!)"
         }
         return questionsURLString
     }
